@@ -1,0 +1,815 @@
+/* =========================================================
+   JOYEUX ANNIVERSAIRE — SARATOUUUU
+   Page 1
+   ========================================================= */
+
+
+/* =========================
+   VARIABLES
+   ========================= */
+
+:root {
+    --cream: #f7efe3;
+    --cream-light: #fffaf3;
+    --paper: #fffaf2;
+    --brown: #4a3025;
+    --brown-light: #765747;
+    --gold: #c79a52;
+    --gold-light: #e2c58d;
+    --rose: #b9786d;
+    --shadow: rgba(74, 48, 37, 0.15);
+}
+
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.7),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(199, 154, 82, 0.10),
+            transparent 30%
+        ),
+        var(--cream);
+
+    color: var(--brown);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+
+/* =========================
+   PAGE
+   ========================= */
+
+.birthday-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 70px 20px 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   PETITS ÉLÉMENTS DÉCORATIFS
+   ========================= */
+
+.decor {
+    position: fixed;
+
+    color: var(--gold);
+
+    font-size: 22px;
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    animation: floating 5s ease-in-out infinite;
+
+    z-index: 0;
+}
+
+.decor-1 {
+    top: 12%;
+    left: 7%;
+    animation-delay: 0s;
+}
+
+.decor-2 {
+    top: 25%;
+    right: 8%;
+    font-size: 28px;
+    color: var(--rose);
+    animation-delay: 1s;
+}
+
+.decor-3 {
+    bottom: 18%;
+    left: 10%;
+    font-size: 16px;
+    animation-delay: 2s;
+}
+
+.decor-4 {
+    bottom: 10%;
+    right: 11%;
+    color: var(--gold);
+    animation-delay: 3s;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.birthday-header {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+    animation: headerAppear 1.2s ease forwards;
+}
+
+@keyframes headerAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Petit symbole */
+
+.small-decoration {
+    margin-bottom: 8px;
+
+    color: var(--gold);
+
+    font-size: 22px;
+}
+
+
+/* Titre */
+
+.birthday-header h1 {
+    margin: 0;
+
+    color: var(--brown);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3rem, 7vw, 5.5rem);
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.8),
+        0 5px 15px rgba(74, 48, 37, 0.08);
+}
+
+
+/* Ligne sous le titre */
+
+.title-line {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 18px;
+}
+
+.title-line span:not(.heart) {
+    width: 75px;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--gold)
+    );
+}
+
+.title-line span:last-child {
+    background: linear-gradient(
+        to left,
+        transparent,
+        var(--gold)
+    );
+}
+
+.title-line .heart {
+    color: var(--rose);
+
+    font-size: 28px;
+
+    animation: heartPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================
+   LETTRE
+   ========================= */
+
+.letter-wrapper {
+    position: relative;
+
+    width: 100%;
+    max-width: 820px;
+
+    z-index: 2;
+
+    animation: letterAppear 1.4s ease 0.25s both;
+}
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================
+   CARTE
+   ========================= */
+
+.letter-card {
+    position: relative;
+
+    width: 100%;
+
+    padding: 55px 70px 60px;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)
+        ),
+        var(--paper);
+
+    border: 1px solid rgba(199, 154, 82, 0.65);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 25px 60px var(--shadow),
+        0 4px 12px rgba(74, 48, 37, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* Deuxième bordure intérieure */
+
+.letter-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid rgba(199, 154, 82, 0.35);
+
+    pointer-events: none;
+}
+
+
+/* Texture très légère */
+
+.letter-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(199, 154, 82, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(185, 120, 109, 0.06),
+            transparent 25%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   DÉCORATION LETTRE
+   ========================= */
+
+.letter-decoration {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.letter-decoration span:not(:nth-child(2)) {
+    width: 70px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.letter-decoration span:nth-child(2) {
+    color: var(--gold);
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   DESTINATAIRE
+   ========================= */
+
+.recipient {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    color: var(--brown);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   CONTENU DE LA LETTRE
+   ========================= */
+
+.letter-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 680px;
+
+    margin: 0 auto;
+}
+
+.letter-content p {
+    margin-bottom: 24px;
+
+    color: var(--brown);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 1.35rem;
+
+    font-weight: 500;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.15px;
+}
+
+.letter-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Texte important */
+
+.letter-content strong {
+    color: #603b29;
+
+    font-weight: 700;
+}
+
+
+/* Italique */
+
+.letter-content em {
+    color: var(--brown-light);
+}
+
+
+/* Passage mis en valeur */
+
+.letter-content .highlight {
+    position: relative;
+
+    margin: 35px 0;
+
+    padding: 22px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(199, 154, 82, 0.10),
+            rgba(185, 120, 109, 0.06)
+        );
+
+    border-left: 3px solid var(--gold);
+
+    border-radius: 0 8px 8px 0;
+}
+
+.letter-content .highlight strong {
+    color: #70452c;
+}
+
+
+/* =========================
+   DÉCORATION BAS
+   ========================= */
+
+.bottom-decoration {
+    margin-top: 40px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BOUTON
+   ========================= */
+
+.surprise-container {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.surprise-btn {
+    position: relative;
+
+    padding: 15px 32px;
+
+    border: 1px solid #b98942;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8e5d2e,
+            #b9823e
+        );
+
+    color: #fffaf2;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 1.15rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(90, 55, 30, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.surprise-btn span {
+    display: inline-block;
+
+    margin-left: 10px;
+
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #9d6934,
+            #c28b45
+        );
+
+    box-shadow:
+        0 13px 28px rgba(90, 55, 30, 0.28);
+}
+
+.surprise-btn:hover span {
+    transform: translateX(5px);
+}
+
+.surprise-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.birthday-footer {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 35px;
+
+    text-align: center;
+
+    color: var(--brown-light);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 1.1rem;
+
+    letter-spacing: 0.5px;
+}
+
+.birthday-footer p {
+    margin-bottom: 8px;
+}
+
+.birthday-footer div {
+    color: var(--gold);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .birthday-page {
+        padding: 50px 15px 40px;
+    }
+
+    .letter-card {
+        padding: 45px 45px 50px;
+    }
+
+    .letter-content p {
+        font-size: 1.25rem;
+    }
+
+    .decor {
+        opacity: 0.25;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .birthday-page {
+        padding: 35px 12px 35px;
+    }
+
+    .birthday-header {
+        margin-bottom: 25px;
+    }
+
+    .birthday-header h1 {
+        font-size: 3.1rem;
+
+        line-height: 1.05;
+    }
+
+    .title-line {
+        gap: 10px;
+
+        margin-top: 14px;
+    }
+
+    .title-line span:not(.heart) {
+        width: 45px;
+    }
+
+    .title-line .heart {
+        font-size: 23px;
+    }
+
+    .letter-card {
+        padding: 38px 25px 40px;
+
+        border-radius: 5px;
+    }
+
+    .letter-card::before {
+        inset: 8px;
+    }
+
+    .letter-decoration {
+        gap: 10px;
+
+        margin-bottom: 20px;
+    }
+
+    .letter-decoration span:not(:nth-child(2)) {
+        width: 45px;
+    }
+
+    .recipient {
+        margin-bottom: 28px;
+
+        font-size: 2.7rem;
+    }
+
+    .letter-content {
+        width: 100%;
+    }
+
+    .letter-content p {
+        margin-bottom: 20px;
+
+        font-size: 1.18rem;
+
+        line-height: 1.65;
+
+        text-align: left;
+    }
+
+    .letter-content .highlight {
+        margin: 28px 0;
+
+        padding: 18px 18px;
+    }
+
+    .bottom-decoration {
+        margin-top: 30px;
+
+        margin-bottom: 25px;
+    }
+
+    .surprise-btn {
+        width: 100%;
+
+        max-width: 330px;
+
+        padding: 14px 20px;
+
+        font-size: 1.05rem;
+    }
+
+    .birthday-footer {
+        margin-top: 25px;
+
+        font-size: 1rem;
+    }
+
+    .decor-1 {
+        top: 8%;
+        left: 4%;
+    }
+
+    .decor-2 {
+        top: 22%;
+        right: 3%;
+    }
+
+    .decor-3 {
+        bottom: 15%;
+        left: 4%;
+    }
+
+    .decor-4 {
+        bottom: 8%;
+        right: 4%;
+    }
+}
+
+
+/* =========================================================
+   TRÈS PETITS TÉLÉPHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .birthday-page {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .birthday-header h1 {
+        font-size: 2.7rem;
+    }
+
+    .letter-card {
+        padding: 32px 20px 35px;
+    }
+
+    .recipient {
+        font-size: 2.4rem;
+    }
+
+    .letter-content p {
+        font-size: 1.1rem;
+    }
+
+    .surprise-btn {
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITÉ
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
